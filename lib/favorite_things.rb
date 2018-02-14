@@ -3,9 +3,15 @@ class Item
   @@list = []
 
   attr_accessor :name
+  attr_accessor :rank
 
-  def initialize(name)
+  def initialize(name, rank)
     @name = name
+    @rank = rank
+  end
+
+  def sort()
+    @@list.sort
   end
 
   def self.all()
