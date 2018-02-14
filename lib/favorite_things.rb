@@ -10,16 +10,17 @@ class Item
     @rank = rank
   end
 
-  def sort()
-    @@list.sort
-  end
-
   def self.all()
     @@list
   end
 
   def save()
     @@list.push(self)
+  end
+
+  def self.sort()
+    sorted_array = @@list.sort_by! { |item| item.rank }
+    binding.pry
   end
 
   def self.clear()
