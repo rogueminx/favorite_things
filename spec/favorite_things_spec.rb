@@ -51,6 +51,15 @@ describe("Item")do
      end
    end
 
+   describe(".validaterank") do
+     it("ensures that you can't repeat rank input") do
+       item = Item.new("tacos", 2)
+       item.save()
+       item2 = Item.new("cupcake", 2)
+       expect(Item.validaterank(item2.rank)).to(eq("Duplicate. Enter something a different rank."))
+     end
+   end
+
   describe(".clear") do
     it("clears all items from the list") do
       item = Item.new("tacos", 1)

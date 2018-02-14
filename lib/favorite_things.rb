@@ -32,6 +32,15 @@ class Item
     end
   end
 
+  def self.validaterank(rank)
+    @@list.each do |item|
+      if item.rank == rank
+        return "Duplicate. Enter something a different rank."
+      else
+        return false
+      end
+    end
+  end
 
 
 
