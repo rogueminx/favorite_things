@@ -20,7 +20,7 @@ class Item
 
   def self.sort()
     sorted_array = @@list.sort_by! { |item| item.rank }
-    binding.pry
+    # binding.pry
   end
 
   def self.clear()
