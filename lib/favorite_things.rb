@@ -19,9 +19,29 @@ class Item
   end
 
   def self.sort()
-    sorted_array = @@list.sort_by! { |item| item.rank }
-    # binding.pry
+    @@list.sort_by! { |item| item.rank }
   end
+
+  def self.validate(name)
+    @@list.each do |item|
+      if item.name == name
+        return "Duplicate. Enter something else."
+      else
+        return false
+      end
+    end
+  end
+
+
+
+
+    # words_looking_to_match = @name
+    # if @@list.map { |a| words_looking_to_match}
+    #   "Duplicate. Enter something else."
+    # elsif
+    #   "it worked"
+    # end
+
 
   def self.clear()
     @@list = []

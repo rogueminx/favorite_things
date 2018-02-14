@@ -33,6 +33,24 @@ describe("Item")do
      end
    end
 
+   describe(".validate") do
+     it("ensures that you can't repeat input") do
+       item = Item.new("tacos", 2)
+       item.save()
+       item2 = Item.new("tacos", 1)
+       expect(Item.validate(item2.name)).to(eq("Duplicate. Enter something else."))
+     end
+   end
+
+   describe(".validate") do
+     it("ensures that you can't repeat input") do
+       item = Item.new("tacos", 2)
+       item.save()
+       item2 = Item.new("cupcake", 1)
+       expect(Item.validate(item2.name)).to(eq(false))
+     end
+   end
+
   describe(".clear") do
     it("clears all items from the list") do
       item = Item.new("tacos", 1)
